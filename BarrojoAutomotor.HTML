@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Taller Cristian Barrojo | Chapa, Pintura y Soldadura Plástica</title>
+  <meta name="description" content="Taller familiar con más de 30 años de experiencia en chapa, pintura y soldadura plástica para autos, camionetas y motos. Pasaje Calchaquí 1840, Villa Urquiza - San Miguel de Tucumán." />
+  <meta name="author" content="Taller Cristian Barrojo" />
+  <link rel="icon" href="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=32&q=60" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD: LocalBusiness for SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Taller Cristian Barrojo",
+    "description": "Chapa, pintura y soldaduras plásticas. Más de 30 años de experiencia. Autos, camionetas y motos.",
+    "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=60",
+    "telephone": "+5493814754690",
+    "email": "barrojocristianautomotriz124@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Pasaje Calchaquí 1840 (Alt. República del Líbano 2250)",
+      "addressLocality": "San Miguel de Tucumán",
+      "addressRegion": "Tucumán",
+      "postalCode": "T4000",
+      "addressCountry": "AR"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-13:00",
+    "geo": {"@type": "GeoCoordinates","latitude":"-26.8167","longitude":"-65.2167"},
+    "url": "https://www.tallerbarrojo.com.ar"
+  }
+  </script>
+
+  <style>
+    :root{
+      --accent:#d62828;
+      --yellow:#FFD400;
+      --dark:#111;
+      --muted:#cfcfcf;
+      --bg-mask: rgba(0,0,0,0.56);
+      --container-width:1200px;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    html,body{height:100%;margin:0;}
+    body{
+      color:#fff;
+      line-height:1.45;
+      -webkit-font-smoothing:antialiased;
+      background: #111;
+    }
+
+    /* Full-bleed background photo (hotlink Unsplash) */
+    .hero-bg{
+      position:fixed; inset:0; z-index:0;
+      background-image: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=2000&q=60');
+      background-size:cover; background-position:center;
+      filter: saturate(0.95) contrast(0.9) brightness(0.45);
+      transform-origin: center;
+    }
+
+    /* Hazard stripes overlay (subtle) */
+    .hero-bg::after{
+      content:"";
+      position:absolute; inset:0;
+      background: repeating-linear-gradient(135deg, #000 0 18px, var(--yellow) 18px 36px);
+      opacity:0.12;
+      mix-blend-mode:overlay;
+      pointer-events:none;
+    }
+
+    /* Main container */
+    .site{
+      position:relative; z-index:2; min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      padding:48px 20px;
+    }
+
+    .card{
+      width:100%; max-width:var(--container-width);
+      background: linear-gradient(180deg, rgba(0,0,0,0.66), rgba(0,0,0,0.48));
+      border-radius:12px; padding:34px; box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+      display:grid; grid-template-columns: 1fr 360px; gap:28px;
+    }
+
+    /* Hazard frame inner border */
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:34px calc(50% - var(--container-width)/2);
+      pointer-events:none;
+    }
+
+    .brand{display:flex; gap:18px; align-items:center}
+    .logo{
+      width:96px;height:96px;border-radius:10px;
+      display:flex;align-items:center;justify-content:center;font-weight:800;
+      background:linear-gradient(135deg,var(--yellow), #f1c40f); color:#000;
+      box-shadow:0 6px 20px rgba(0,0,0,0.6); font-size:22px;
+    }
+
+    h1{margin:0;font-size:34px;letter-spacing:0.2px}
+    .lead{color:var(--yellow); font-weight:700; margin-top:6px}
+
+    p{margin:12px 0; color:#eee}
+
+    .services{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .pill{padding:8px 12px;border-radius:6px;background:rgba(255,255,255,0.06);font-weight:600}
+
+    /* Contact column */
+    aside.contact{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      padding:18px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);
+      position:relative;
+    }
+    aside.contact h3{color:var(--yellow); margin:0 0 8px 0}
+    .line{display:flex; gap:10px; align-items:center; margin-bottom:8px; font-weight:700}
+    .muted{color:var(--muted); font-weight:600; width:110px}
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:8px;
+      text-decoration:none; font-weight:700; color:#111; background:var(--yellow); border:2px solid rgba(0,0,0,0.12);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.35);
+    }
+    .btn.ghost{background:transparent;color:var(--yellow); border:1px solid rgba(255,255,255,0.08)}
+
+    /* Gallery & testimonials */
+    .gallery{display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; margin-top:12px}
+    .gallery img{width:100%; height:120px; object-fit:cover; border-radius:6px; display:block; filter:brightness(0.9)}
+    .testimonials{margin-top:12px}
+    .testimonial{background:rgba(255,255,255,0.03); padding:12px; border-radius:8px; margin-bottom:8px}
+
+    /* Footer */
+    .footer{grid-column:1/-1; margin-top:16px; padding-top:12px; border-top:1px dashed rgba(255,255,255,0.06); display:flex; justify-content:space-between; font-size:13px; color:#ddd}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .card{grid-template-columns:1fr; padding:22px}
+      aside.contact{order:-1; margin-bottom:12px}
+      .gallery img{height:100px}
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <div class="site" role="document">
+    <article class="card" role="main" aria-labelledby="main-title">
+      <section>
+        <div class="brand" aria-hidden="false">
+          <div class="logo" aria-hidden="true">CB</div>
+          <div>
+            <h1 id="main-title">Taller <strong>Cristian Barrojo</strong></h1>
+            <div class="lead">Chapa · Pintura · Soldaduras Plásticas · +30 años</div>
+            <div style="font-size:13px; color:#ccc; margin-top:6px">Pasaje Calchaquí 1840 (Alt. República del Líbano 2250) · Villa Urquiza, San Miguel de Tucumán</div>
+          </div>
+        </div>
+
+        <p><strong>Somos un taller familiar</strong> con más de 30 años de trayectoria especializado en reparación de carrocería, pintura integral y soldadura plástica. Trabajamos autos, camionetas y motos asegurando terminaciones profesionales y presupuestos claros.</p>
+
+        <div class="services" aria-hidden="false">
+          <div class="pill">Chapa y reacondicionamiento</div>
+          <div class="pill">Pintura completa y retoques</div>
+          <div class="pill">Soldadura plástica</div>
+          <div class="pill">Pulido y encerado</div>
+          <div class="pill">Restauración</div>
+        </div>
+
+        <h2 style="margin-top:18px">Galería</h2>
+        <div class="gallery" aria-label="Galería de trabajos">
+          <!-- Reemplazar src por fotos reales de trabajos -->
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60" alt="Restauración de pintura - antes y después" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1517392481661-0f6f9f1b4b6b?auto=format&fit=crop&w=800&q=60" alt="Pintura profesional en taller" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1542367597-4b0b4e3f1b5f?auto=format&fit=crop&w=800&q=60" alt="Pulido y acabado" loading="lazy">
+        </div>
+
+        <h2 style="margin-top:18px">Testimonios</h2>
+        <div class="testimonials" aria-live="polite">
+          <div class="testimonial"><strong>Carlos R.</strong> — "Excelente trabajo, dejaron mi camioneta impecable. Muy responsable el equipo."</div>
+          <div class="testimonial"><strong>María P.</strong> — "Recomendados. Rápidos y con buen precio. Volvería sin dudar."</div>
+        </div>
+
+      </section>
+
+      <aside class="contact" role="complementary" aria-label="Información de contacto">
+        <h3>Contacto & Horarios</h3>
+        <div class="line"><span class="muted">Dirección:</span> Pasaje Calchaquí 1840 (Alt. República del Líbano 2250)</div>
+        <div class="line"><span class="muted">Propietario:</span> Cristian Luis Barrojo</div>
+        <div class="line"><span class="muted">Tel / WhatsApp:</span> <strong id="phone">+54 9 38XX XXX XXX</strong></div>
+        <div class="line"><span class="muted">Email:</span> <strong id="email">contacto@barrojoautoworks.com</strong></div>
+        <div class="line"><span class="muted">Horario:</span> Lun-Vie 08:00–18:00 · Sáb 08:00–13:00</div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <!-- Whatsapp button (replace number parameter) -->
+          <a class="btn" href="https://wa.me/54938XXXXXXXX?text=Hola%2C%20quiero%20un%20presupuesto%20para%20mi%20veh%C3%ADculo" target="_blank" rel="noopener" aria-label="Enviar mensaje por WhatsApp">💬 WhatsApp</a>
+
+          <!-- Google Maps -->
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Pasaje+Calchaqu%C3%AD+1840+San+Miguel+de+Tucum%C3%A1n" target="_blank" rel="noopener" aria-label="Ver en Google Maps">📍 Ver en Maps</a>
+        </div>
+
+        <hr style="border:none;height:1px;background:rgba(255,255,255,0.06);margin:12px 0">
+
+        <div style="font-size:13px;color:#ddd">Presupuestos sin cargo · Garantía en trabajos de chapa y pintura · Atención personalizada</div>
+      </aside>
+
+      <div class="footer">
+        <div>© <strong>Taller Cristian Barrojo</strong> · +30 años</div>
+        <div style="text-align:right">Pasaje Calchaquí 1840 · Villa Urquiza · San Miguel de Tucumán</div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Small script to update phone/email placeholders quickly if needed -->
+  <script>
+    // Para personalizar sin editar HTML: modifica estos valores desde aquí
+    (function(){
+      const phone = '+54938XXXXXXXX'; // reemplazar por número real
+      const email = 'contacto@barrojoautoworks.com'; // reemplazar por email real
+      document.getElementById('phone').textContent = phone;
+      document.getElementById('email').textContent = email;
+      // Actualizar WhatsApp link (si existe)
+      const wa = document.querySelector('a[href^="https://wa.me/"]');
+      if(wa) wa.href = 'https://wa.me/' + phone.replace(/\D/g,'') + '?text=' + encodeURIComponent('Hola, quiero un presupuesto para mi vehículo');
+    })();
+  </script>
+</body>
+</html>
