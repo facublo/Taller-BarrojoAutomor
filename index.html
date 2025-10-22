@@ -121,6 +121,31 @@
     }
   </style>
 </head>
+  <script>
+  // Comportamiento extra (opcional, no modifica nada existente):
+  // - Si el usuario está en iOS, abrimos Apple Maps preferentemente.
+  (function(){
+    try {
+      const btn = document.getElementById('directionsBtn');
+      if(!btn) return;
+      const destination = encodeURIComponent('Pje. Calchaquies 1843, T4001EEK San Miguel de Tucumán, Tucumán');
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      // iOS (Apple Maps)
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        // maps:// scheme abrirá la app Apple Maps si está disponible
+        btn.href = 'maps://?daddr=' + destination;
+      } else {
+        // Android / desktop → Google Maps directions (por defecto)
+        btn.href = 'https://www.google.com/maps/dir/?api=1&destination=' + destination;
+      }
+      // accesibilidad: apaga foco después de click (UX)
+      btn.addEventListener('click', () => setTimeout(()=>btn.blur(), 200));
+    } catch(e){
+      console.warn('directions btn init error', e);
+    }
+  })();
+</script>
+<!-- === FIN BOTÓN "Cómo llegar" === -->
 <body>
 
   <!-- HEADER -->
@@ -510,3 +535,4 @@
   </script>
 </body>
 </html>
+
